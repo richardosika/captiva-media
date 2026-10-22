@@ -1,0 +1,13 @@
+services:
+  - type: web
+    runtime: static
+    name: captiva-media
+    buildCommand: echo ok
+    staticPublishPath: .
+    headers:
+      - path: /video/*
+        name: Access-Control-Allow-Origin
+        value: "*"
+      - path: /video/*
+        name: Cache-Control
+        value: public, max-age=86400
